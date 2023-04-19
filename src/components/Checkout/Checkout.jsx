@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-
 import { Button, TextField } from "@mui/material";
 import { CartContext } from "../Contexts/CartContext";
 import { ShoppingCart } from "@mui/icons-material";
+import { useNavigate } from 'react-router-dom';
+
 
 function Checkout() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { cartItems, clearCart } = useContext(CartContext);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [formError, setFormError] = useState({});
@@ -40,7 +41,7 @@ function Checkout() {
       console.log("Datos del formulario:", formData);
       console.log("Productos del carrito:", cartItems);
       clearCart();
-      history.push("/order-confirmation");
+      navigate.push("/order-confirmation");
     }
   };
 

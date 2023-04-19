@@ -25,7 +25,7 @@ import ItemQuantitySelector from "../ItemQuantitySelector/ItemQuantitySelector";
           <p>{producto.description}</p>
           <p>$ {producto.price}</p>
           <p>Rating: {producto.rating.rate}</p>
-          <ItemQuantitySelector onQuantityChange={handleQuantityChange} onAddToCart={handleAddToCart} item={producto} />
+          <ItemQuantitySelector onQuantityChange={handleQuantityChange} initialQuantity = {1} stock = {5} />
         </div>
       );
     };

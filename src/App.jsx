@@ -3,14 +3,14 @@ import db from "../db/firebase-config.js";
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "../components/Home/Home";
-import Navbar from "../components/Navbar/Navbar";
-import ItemListContainer from "../components/ItemListContainer/ItemsListContainer";
-import ItemList from "../components/ItemList/ItemList";
-import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
-import ItemDetail from "../components/ItemDetail/ItemDetail";
-import { CartProvider} from "../components/Contexts/CartContext";
-import Checkout from "../components/Checkout/Checkout";
+import Home from "./components/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import ItemListContainer from "./components/ItemListContainer/ItemsListContainer";
+import ItemList from "./components/ItemList/ItemList";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import ItemDetail from "./components/ItemDetail/ItemDetail";
+import { CartProvider } from "./components/Contexts/CartContext";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const [productos, setProductos] = useState([]);
@@ -53,9 +53,7 @@ function App() {
             path="/carrito"
             element={<ItemDetail productos={productos} />}
           />
-           <Route  
-           path="/checkout" 
-           element ={Checkout} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<h2>404</h2>} />
         </Routes>
       </div>
