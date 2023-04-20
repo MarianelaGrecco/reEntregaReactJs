@@ -1,0 +1,7 @@
+.container_Button {
+    background-color: rgb(196, 198, 241);
+    display: flex;
+    justify-content: space-between;
+    color: rgb(67, 128, 219);
+    margin-bottom: 10px;
+}

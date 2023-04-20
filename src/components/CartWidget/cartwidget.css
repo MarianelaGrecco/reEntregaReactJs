@@ -1,0 +1,20 @@
+.cart-widget {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-icon {
+    top: 20px;
+    font-size: 30px;
+    color: rgb(67, 128, 219);
+  }
+  
+  .cart-notification {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: rgb(67, 128, 219) ;
+  }

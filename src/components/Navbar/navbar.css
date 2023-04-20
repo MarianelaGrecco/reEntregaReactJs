@@ -1,0 +1,25 @@
+.container_Navbar {
+  background-color: rgb(196, 198, 241);
+  display: flex;
+  justify-content: space-around;
+  color: rgb(67, 128, 219);
+}
+.store-icon {
+  font-size: 30px;
+  color: rgb(67, 128, 219);
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}

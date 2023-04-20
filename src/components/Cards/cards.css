@@ -1,0 +1,17 @@
+.container {
+   flex-direction: row;
+   border: 3px solid  rgb(67, 128, 219);
+   padding: 1rem;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   width: 100%;
+   row-gap: 20px;
+   flex: 1 1 auto;
+   margin-top: 20px;
+   text-align: center;
+ }
+ 
+ /* .image {
+    padding-left: 100px;
+ } */
