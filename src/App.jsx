@@ -53,8 +53,12 @@ function App() {
             path="/carrito"
             element={<ItemDetail productos={productos} />}
           />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="*" element={<h2>404</h2>} />
+          <Route path="/checkout" element={<Checkout />} 
+          />
+           <Route path="/order/confirmation" element={<Checkout />} 
+          />
+          <Route path="*" element={<h2>404</h2>} 
+          />
         </Routes>
       </div>
     </CartProvider>

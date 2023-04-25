@@ -1,6 +1,8 @@
 import { useContext, } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import Checkout from "../Checkout/Checkout";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
  
 function ItemDetail() {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
@@ -18,13 +20,17 @@ function ItemDetail() {
                 <h4>{producto.title}</h4>
                 <img className="image" src={producto.image} alt="imagen del producto" width={200} />
                 <p>${producto.price}</p>
-                <button onClick={() => removeFromCart(producto.id)}>Eliminar</button>
+                <Button variant="outlined" onClick={() => removeFromCart(producto.id)}>Eliminar</Button>
               </div>
           
             </div>
           ))}
-          <button onClick={Checkout}>Comprar</button>
-          <button onClick={clearCart}>Vaciar carrito</button>
+          
+          <Link to="/checkout">
+        <Button variant="outlined">Comprar</Button>
+      </Link>
+
+          <Button variant="outlined" onClick={clearCart}>Vaciar carrito</Button>
         </>
       )}
     </div>

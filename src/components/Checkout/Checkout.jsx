@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Checkout() {
   const navigate = useNavigate();
-  const { cartItems, clearCart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [formError, setFormError] = useState({});
 
@@ -39,21 +39,21 @@ function Checkout() {
     if (validateForm()) {
       // Aquí se enviaría la orden de compra a la API o servidor
       console.log("Datos del formulario:", formData);
-      console.log("Productos del carrito:", cartItems);
+      console.log("Productos del carrito:", cart);
       clearCart();
-      navigate.push("/order-confirmation");
+      navigate("/order/confirmation");
     }
   };
 
   return (
     <div className="container">
-      <h2>Checkout</h2>
-      {cartItems.length === 0 ? (
-        <p>No hay productos en el carrito</p>
+      <h2>Compra realizada</h2>
+      {cart.length === 0 ? (
+        <p></p>
       ) : (
         <>
           <ul>
-            {cartItems.map((item) => (
+            {cart.map((item) => (
               <li key={item.id}>
                 {item.title} x {item.quantity}
               </li>
@@ -90,7 +90,7 @@ function Checkout() {
             <Button
               variant="contained"
               startIcon={<ShoppingCart />}
-              onClick={() => history.push("/cart")}
+              onClick={() => navigate.push("/cart")}
             >
               Volver al carrito
             </Button>{" "}
