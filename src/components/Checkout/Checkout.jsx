@@ -7,7 +7,11 @@ import { useNavigate } from 'react-router-dom';
 
 function Checkout() {
   const navigate = useNavigate();
+<<<<<<< HEAD
   const { cart, clearCart } = useContext(CartContext);
+=======
+  const { cartItems, clearCart } = useContext(CartContext);
+>>>>>>> b833765eae0d010f1484fae7e83f2a4703295bd0
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [formError, setFormError] = useState({});
 
@@ -39,14 +43,21 @@ function Checkout() {
     if (validateForm()) {
       // Aquí se enviaría la orden de compra a la API o servidor
       console.log("Datos del formulario:", formData);
+<<<<<<< HEAD
       console.log("Productos del carrito:", cart);
       clearCart();
       navigate("/order/confirmation");
+=======
+      console.log("Productos del carrito:", cartItems);
+      clearCart();
+      navigate.push("/order-confirmation");
+>>>>>>> b833765eae0d010f1484fae7e83f2a4703295bd0
     }
   };
 
   return (
     <div className="container">
+<<<<<<< HEAD
       <h2>Compra realizada</h2>
       {cart.length === 0 ? (
         <p></p>
@@ -54,6 +65,15 @@ function Checkout() {
         <>
           <ul>
             {cart.map((item) => (
+=======
+      <h2>Checkout</h2>
+      {cartItems.length === 0 ? (
+        <p>No hay productos en el carrito</p>
+      ) : (
+        <>
+          <ul>
+            {cartItems.map((item) => (
+>>>>>>> b833765eae0d010f1484fae7e83f2a4703295bd0
               <li key={item.id}>
                 {item.title} x {item.quantity}
               </li>
@@ -87,7 +107,17 @@ function Checkout() {
               helperText={formError.phone}
             />
             <br />
+<<<<<<< HEAD
            
+=======
+            <Button
+              variant="contained"
+              startIcon={<ShoppingCart />}
+              onClick={() => navigate.push("/cart")}
+            >
+              Volver al carrito
+            </Button>{" "}
+>>>>>>> b833765eae0d010f1484fae7e83f2a4703295bd0
             <Button type="submit" variant="contained">
               Confirmar compra
             </Button>
