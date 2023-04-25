@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import { Button, TextField } from "@mui/material";
 import { CartContext } from "../Contexts/CartContext";
 import { ShoppingCart } from "@mui/icons-material";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function Checkout() {
   const navigate = useNavigate();
@@ -87,7 +86,7 @@ function Checkout() {
               helperText={formError.phone}
             />
             <br />
-           
+
             <Button type="submit" variant="contained">
               Confirmar compra
             </Button>

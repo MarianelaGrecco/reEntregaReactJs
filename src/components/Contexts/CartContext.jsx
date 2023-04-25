@@ -1,38 +1,34 @@
 import React, { createContext, useState } from "react";
 
-
-
 export const CartContext = createContext();
 
 export const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
 
-    const addToCart = (item) => {
+  const addToCart = (item) => {
     const index = cart.findIndex((cartItem) => cartItem.id === item.id);
     if (index === -1) {
       setCart([...cart, { ...item }]);
-    } else { 
-      const newProducts = cart.map(cartItem => {
-        if(cartItem.id === item.id) {
-            const newProduct = {
-                ...cartItem,
-                quantity: cartItem.quantity + item.quantity
-            }
-            return newProduct
+    } else {
+      const newProducts = cart.map((cartItem) => {
+        if (cartItem.id === item.id) {
+          const newProduct = {
+            ...cartItem,
+            quantity: cartItem.quantity + item.quantity,
+          };
+          return newProduct;
         } else {
-            return prod
+          return prod;
         }
-    })
+      });
       setCart(newProducts);
     }
   };
-
 
   const removeFromCart = (itemId) => {
     const newCart = cart.filter((cartItem) => cartItem.id !== itemId);
     setCart(newCart);
   };
-
 
   const clearCart = () => {
     setCart([]);
@@ -77,5 +73,3 @@ export const CartProvider = (props) => {
     </CartContext.Provider>
   );
 };
-
-
