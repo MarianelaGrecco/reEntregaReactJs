@@ -87,13 +87,7 @@ function Checkout() {
               helperText={formError.phone}
             />
             <br />
-            <Button
-              variant="contained"
-              startIcon={<ShoppingCart />}
-              onClick={() => navigate.push("/cart")}
-            >
-              Volver al carrito
-            </Button>{" "}
+           
             <Button type="submit" variant="contained">
               Confirmar compra
             </Button>
